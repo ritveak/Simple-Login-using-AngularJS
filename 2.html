@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>login</title>
+</head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+</script>
+<body >
+  <h1 align="center">Login page</h1><br><br>
+<div align="center" style="background-color: lightgreen; margin-left:300px;margin-right: 300px; padding: 50px;">
+  
+  <form ng-app="myApp" ng-controller="myCtrl" 
+name="myForm" >
+  Username:<input type="text" ng-model="user" name="user"><br><br>
+  Password : <input type="password" ng-model="pass" name="pass"><br><br>
+   Remember me <input type="checkbox" name=""><br><br>
+  <button type="button" name="login" ng-click="submit()">Login</button>
+</form>
+
+</div>
+<script type="text/javascript">
+  var app = angular.module('myApp',[]);
+  app.controller('myCtrl',function($scope){
+    $scope.user = 'Ritveak';
+    $scope.pass = 'ritveak';
+    $scope.submit=function(){
+      if($scope.user == 'Ritveak' )
+    {
+      if($scope.pass == 'ritveak')
+        {location="loggedin.html";}
+      else{alert("Wrong Password");}
+    }
+    else{alert("Wrong Username");}
+
+    };
+  });
+</script>
+</body>
+</html>
